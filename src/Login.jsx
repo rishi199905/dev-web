@@ -15,7 +15,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogin = async () => {
-    handleValidation();
+    // handleValidation();
     if (errorMsg === "") {
       try {
         const loginResponse = await axios.post(
@@ -38,29 +38,40 @@ const Login = () => {
     if (!email || email === "") {
       setErrorMsg("Email cannot be empty!");
     } else {
+    console.log("here")
+
       setErrorMsg("");
     }
     if ((!password || password === "") && errorMsg === "") {
       setErrorMsg("password cannot be empty!");
     } else {
+    console.log("here")
+
       setErrorMsg("");
     }
     if (!isLogin) {
+    console.log((!firstName || firstName === "") && errorMsg === "")
+
       if ((!firstName || firstName === "") && errorMsg === "") {
         setErrorMsg("First Name cannot be empty!");
       } else {
+    console.log("here")
+
         setErrorMsg("");
       }
       if ((!lastName || lastName === "") && errorMsg === "") {
         setErrorMsg("Last Name cannot be empty!");
       } else {
+    console.log("here")
+
         setErrorMsg("");
       }
     }
   };
 
   const handleSignUp = async () => {
-    handleValidation();
+    // handleValidation();
+    // console.log(errorMsg)
     if (errorMsg === "") {
       try {
         const signinResponse = await axios.post(
@@ -115,7 +126,6 @@ const Login = () => {
                       <circle cx="12" cy="7" r="4"></circle>
                     </g>
                   </svg>
-                  First Name
                 </legend>
 
                 <input
@@ -123,9 +133,10 @@ const Login = () => {
                   value={firstName}
                   className="input"
                   onChange={(e) => {
+                    setErrorMsg("");
                     setFirstName(e.target.value);
                   }}
-                  placeholder="Type Email here"
+                  placeholder="Type First Name"
                 />
               </fieldset>
             </div>
@@ -151,7 +162,6 @@ const Login = () => {
                       <circle cx="12" cy="7" r="4"></circle>
                     </g>
                   </svg>
-                  Last Name
                 </legend>
 
                 <input
@@ -159,9 +169,10 @@ const Login = () => {
                   value={lastName}
                   className="input"
                   onChange={(e) => {
+                    setErrorMsg("");
                     setLastName(e.target.value);
                   }}
-                  placeholder="Type Email here"
+                  placeholder="Type Last Name"
                 />
               </fieldset>
             </div>
@@ -185,13 +196,13 @@ const Login = () => {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                   </g>
                 </svg>
-                Email
               </legend>
               <input
                 type="text"
                 value={email}
                 className="input"
                 onChange={(e) => {
+                  setErrorMsg("");
                   setEmailId(e.target.value);
                 }}
                 placeholder="Type Email here"
@@ -223,13 +234,13 @@ const Login = () => {
                     ></circle>
                   </g>
                 </svg>
-                Password
               </legend>
               <input
                 type="text"
                 value={password}
                 className="input"
                 onChange={(e) => {
+                  setErrorMsg("");
                   setpassword(e.target.value);
                 }}
                 placeholder="Type Password here"

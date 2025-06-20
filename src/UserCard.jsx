@@ -53,11 +53,15 @@ const UserCard = (user) => {
       <div>
         <div className="card card-side bg-rose-100 shadow-sm border-2">
           <figure>
-            <img src={photoUrl} alt="Shoes" />
+            <img src={photoUrl} style={{
+          width: '300px',   
+          height: '255px',   
+          borderRadius: '8px' 
+        }} alt="Profile Pic!" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">
-              {firstName} {lastName}{" "}
+              {firstName} {lastName}
               {containsAny(skills, loggenInUser?.skills) ? (
                 <div className="badge badge-secondary"> Similar Skills</div>
               ) : (

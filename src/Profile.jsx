@@ -59,9 +59,11 @@ const Profile = () => {
       
       <div className="flex justify-center ">
       
-        <div className="card card-border bg-slate-100 w-96 mx-5">
-          <div className="card-body">
-            <h2 className="card-title text-black">Edit Profile</h2>
+        <div className="card card-border bg-slate-100 mt-5">
+            <h2 className="card-title text-black mt-5 ml-5">Edit Profile</h2>
+
+          <div className="card-body grid grid-cols-2">
+       
             <div>
               <fieldset className="fieldset ">
                 <legend className="fieldset-legend text-black">Fisrt Name</legend>
@@ -75,8 +77,6 @@ const Profile = () => {
                   placeholder=""
                 />
               </fieldset>
-            </div>
-            <div>
               <fieldset className="fieldset">
                 <legend className="fieldset-legend text-black">Last Name</legend>
                 <input
@@ -175,11 +175,10 @@ const Profile = () => {
               <fieldset className="fieldset ">
                 <legend className="fieldset-legend text-black">Photo Url</legend>
                 <input
-                  type="text"
-                  value={photoUrl}
-                  className="input"
+                  type="file"
+                  className="file-input"
                   onChange={(e) => {
-                    setphotoUrl(e.target.value);
+                    setphotoUrl(URL.createObjectURL(e.target.files[0]));
                   }}
                   placeholder=""
                 />
@@ -195,7 +194,8 @@ const Profile = () => {
           </div>
         </div>
  <div className="divider divider-horizontal">View</div>
-        <UserCard
+ <div className='mt-5'>
+<UserCard
           user={{
             firstName,
             lastName,
@@ -205,6 +205,8 @@ const Profile = () => {
             skills,
           }}
         />
+ </div>
+        
       </div>
       {showSuccess ? <div className="toast toast-bottom toast-right mb-10">
        
