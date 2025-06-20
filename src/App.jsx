@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Body from "./bODY.JSX";
+import Body from "./Body.jsx";
 import Login from "./Login";
 import Profile from "./Profile";
 import Footer from "./Footer";

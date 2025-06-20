@@ -4,7 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { BASE_URL } from './utils/constants'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser } from './utils/userSlice'
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 const Body = () => {
     const dispatch = useDispatch()
