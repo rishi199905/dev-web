@@ -7,6 +7,9 @@ import Footer from "./Footer";
 import { Provider } from "react-redux";
 import userStore from "./utils/userStore";
 import Feed from "./Feed";
+import Connections from "./Connections";
+import Requests from "./Requests";
+import Chat from "./Chat";
 function App() {
   return (
     <><Provider store={userStore}>
@@ -20,6 +23,15 @@ function App() {
               {" "}
             </Route>
             <Route path="/profile" element={<Profile />}>
+              {" "}
+            </Route>
+            <Route path="/connections" element={<Connections />}>
+              {" "}
+            </Route>
+            <Route path="/requests" element={<Requests />}>
+              {" "}
+            </Route>
+            <Route path="/chat/:id" element={<Chat />}>
               {" "}
             </Route>
           </Route>

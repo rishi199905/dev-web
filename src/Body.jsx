@@ -12,21 +12,21 @@ const Body = () => {
     const user = useSelector((store) => store.user)
 
     const fetchProfile = async  () => {
+        if (user) return;
+
         try {
             const profileRespone = await axios.get(BASE_URL + "/profile/view", {withCredentials: true})
             dispatch(addUser(profileRespone.data))
         } catch (error) {
             console.log(error)
             if (error.status === 401) {
-                navigate("/login")
+                return navigate("/login")
             }
         }
     }
 
     useEffect( () => {
-        if (user) {
             fetchProfile()
-        }
     }, [])
     
   return (
