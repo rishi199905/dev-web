@@ -175,10 +175,11 @@ const Profile = () => {
               <fieldset className="fieldset ">
                 <legend className="fieldset-legend text-black">Photo Url</legend>
                 <input
-                  type="file"
-                  className="file-input"
+                  type="text"
+                  value={photoUrl}
+                  className="input"
                   onChange={(e) => {
-                    setphotoUrl(URL.createObjectURL(e.target.files[0]));
+                    setphotoUrl(e.target.value);
                   }}
                   placeholder=""
                 />
