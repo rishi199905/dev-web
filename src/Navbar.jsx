@@ -19,7 +19,6 @@ const Navbar = () => {
             console.log(error)
         }
     }
-    console.log(document.cookie)
     return (
       <div>
         <div className="navbar bg-base-300 shadow-sm">
@@ -171,7 +170,7 @@ const Navbar = () => {
                     {user.about === "default about" ? user.about + " ( Update on Profile page ) " : user.about} 
                   </li>
                   <li>
-                    {user.skills.join(", ")} 
+                    {user?.skills?.join(", ")} 
                   </li>
                 </ul>
               </div>

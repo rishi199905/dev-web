@@ -27,7 +27,7 @@ const Connections = () => {
   // if (connections.length() === 0) return ( <div>No Connections</div>)
   if (connections?.length === 0) return (
        <div className="flex justify-center my-10">
-            No new requests!
+            No new Connections!
           </div>
       );
 
