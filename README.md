@@ -10,7 +10,7 @@ Functionalities:
 - Chat with your connections, powered by Socket.IO.
 
 
-
+Tech behind the Scenes: React.js, Redux-toolkit, Javascript(obviously), DaisyUI, TailwindCSS.
 
 
 
